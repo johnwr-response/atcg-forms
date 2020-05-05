@@ -7,14 +7,14 @@
           ngModelGroup="userData"
           #userData="ngModelGroup">
           <div class="form-group">
-            <label for="username">Username</label>
+            <label for="userName">Username</label>
             <input
               type="text"
               id="userName"
               class="form-control"
               ngModel
               name="userName"
-              required>
+              required="required">
           </div>
           <button
             class="btn btn-default"
@@ -70,6 +70,17 @@
           type="submit"
           [disabled]="!f.valid">Submit</button>
       </form>
+    </div>
+  </div>
+  <hr>
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3>Your Data</h3>
+      <p>Username: {{ user.userName }}</p>
+      <p>E-mail: {{ user.email }}</p>
+      <p>Secret Question: Your first {{ user.secretQuestion }}</p>
+      <p>Answer: {{ user.answer }}</p>
+      <p>Gender: {{ user.gender }}</p>
     </div>
   </div>
 </div>
